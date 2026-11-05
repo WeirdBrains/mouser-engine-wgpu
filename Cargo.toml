@@ -1,18 +1,24 @@
 [package]
 name = "mouser-engine-wgpu"
-edition = "2024"
 version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
 license = "BSD-3-Clause"
+authors = ["Mouser Contributors"]
 description = "Mouser's wgpu renderer (engine \"mouser\") as an engine library on the C ABI (mouser-engine-abi v2)"
-repository = ""
-publish = false
+repository = "https://github.com/WeirdBrains/mouser-engine-wgpu"
+homepage = "https://github.com/WeirdBrains/mouser-engine-wgpu"
+readme = "README.md"
+keywords = ["terminal", "mouser", "renderer", "wgpu"]
+categories = ["rendering"]
+exclude = ["/.github", "/legacy"]
 
 [lib]
 name = "mouser_engine_wgpu"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-mouser-engine-abi = { path = "../mouser-engine-abi" }
-wgpu.workspace = true
-pollster.workspace = true
+mouser-engine-abi = "1.0"
+wgpu = "0.20.1"
+pollster = "0.3.0"
 raw-window-handle = "0.6"
